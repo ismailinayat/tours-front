@@ -1,0 +1,158 @@
+.navigation {
+
+  display: none;
+
+  &__checkbox {
+    display: none;
+
+    &:checked ~ .navigation__background {
+
+      transform: scale(80);
+
+    }
+
+    &:checked ~ .navigation__nav {
+
+      opacity: 1;
+      width: 100%;
+    }
+
+    &:checked  + .navigation__button .navigation__icon {
+
+      background-color: transparent;
+
+      &::after {
+        top: 0;
+        transform: rotate(135deg);
+      }
+
+      &::before {
+        top: 0;
+        transform: rotate(-135deg);
+      }
+    }
+
+  }
+
+  &__button {
+
+    height: 7rem;
+    width: 7rem;
+    background-color: $color-white;
+    border-radius: 50%;
+    z-index: 200;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    cursor: pointer;
+    text-align: center;
+
+    &:hover .navigation__icon{
+      &::before {transform: translateY(-0.2rem)};
+      &::after {transform: translateY(0.2rem)};
+    }
+
+  }
+
+  &__icon {
+    width: 3rem;
+    height: 3px;
+    background-color: $color-grey-dark-3;
+    display: inline-block;
+    position: relative;    //for positioning of ::before and ::after pseudo-classes
+    top: 3.4rem;
+    
+
+
+
+    &::before,
+    &::after {
+      content: "";
+      width: 3rem;
+      height: 3px;
+      background-color: $color-grey-dark-3;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {top: -0.8rem};
+    &::after {top: 0.8rem};
+
+  }
+
+
+  &__background {
+
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-image: radial-gradient($color-primary-light, $color-primary-dark);
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    z-index: 100;
+    transition: all 0.3s;
+
+    
+  }
+
+  &__nav {
+
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 150;
+    opacity: 0;
+    width: 0;
+    transition: all 0.3s;
+  }
+
+  &__list {
+
+    @include absCenter;
+  }
+
+  &__item {
+
+    list-style: none;
+    margin: 1.5rem;
+    display: block;
+  }
+
+  &__link {
+    
+    &:link,
+    &:visited {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $color-white;
+      display: inline-block;
+      font-weight: 300;
+      font-size: 3rem;
+      transition: all 0.4s;
+
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      background-size: 220%;
+
+      span {
+        margin-right: 1.5rem;
+      
+      }
+
+      &:hover,
+      &:active {
+        background-position: 100%;
+        color: $color-primary;
+        transform: translateX(1rem);
+      }
+      
+    }
+
+  }
+
+}
