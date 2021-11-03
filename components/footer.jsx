@@ -7,8 +7,8 @@ function Footer() {
                 <img src="../img/logo-green-2x.png" alt="Natours Logo Large" className="footer__logo"/>
               </div>
 
-              <div className="row">
-                <div className="col-1-of-2">
+              <div className="footer__container">
+                <div className="footer__container--left">
                   <div className="footer__navigation">
                     <ul className="footer__list">
                       <li className="footer__list-item"><a href="" className="footer__link">Company</a></li>
@@ -19,7 +19,7 @@ function Footer() {
                     </ul>
                   </div>
                 </div>
-                <div className="col-1-of-2">
+                <div className="footer__container--right">
                   <p className="footer__copyright">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. At provident voluptas, expedita quasi nesciunt odio ipsum facere beatae, cumque quas quia odit praesentium omnis autem et dolores? 
                 Cupiditate laudantium, itaque, numquam dignissimos minima ipsam praesentium reiciendis nemo eligendi animi ipsa ab nostrum ullam totam. Vel iste laudantium sint aliquam? Laudantium accusamus 

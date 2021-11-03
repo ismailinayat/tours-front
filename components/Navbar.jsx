@@ -1,6 +1,7 @@
 import {useContext} from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {useRouter} from 'next/router';
 import axios from 'axios';
 
 import {UserContext} from './../context/UserContext';
@@ -8,12 +9,15 @@ import {UserContext} from './../context/UserContext';
 function Navbar() {
 
     const {user, setUser} = useContext(UserContext);
+    const router = useRouter();
 
+    //console.log(router)
 
+    
 
     const logout = async () => {
       try {
-        const res = await axios.get('https://tours-explorer.herokuapp.com/api/v1/users/logout/', 
+        const res = await axios.get('http://localhost:8000/api/v1/users/logout/', 
         {withCredentials: true}
         )
         //window.location.replace("http://localhost:3000");
@@ -28,11 +32,11 @@ function Navbar() {
       logout();
     }
 
-    console.log(user);
+    //console.log(user);
     return (
         <div>
             <header className="header-t">
-              <nav className="nav nav--tours">
+              {router.pathname === '/tours' && (<nav className="nav nav--tours">
                 <a href="#" className="nav__el">All tours</a>
                 <form className="nav__search">
                   <button className="nav__search-btn">
@@ -46,12 +50,13 @@ function Navbar() {
                     className="nav__search-input"
                   />
                 </form>
-              </nav>
+              </nav>)}
+              
 
               <Link href="/">
               
                 <div className="header__logo">
-                  <img src="img/logo-white.png" alt="Natours logo" />
+                  <img src="/img/logo-white.png" alt="Natours logo" />
                 </div>
               </Link>
 

@@ -1,3 +1,14 @@
+.story__container {
+
+  max-width: $grid-width;
+  margin: 0 auto;
+  &:not(:last-child) {
+    margin-bottom: 5rem;
+  }
+
+
+}
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -10,6 +21,9 @@
   position: relative;
   transform: skewX(-12deg);
 
+  @include respond(tab-land) {
+    width: 85%;
+  }
 
   & > * {
     transform: skewX(12deg);

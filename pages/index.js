@@ -8,7 +8,7 @@ export default function Home() {
     <div className='app'>
       <Head>
         
-        <title>Natours | Exciting tours htmlFor adventurous people</title>
+        <title>Natours | Exciting tours For adventurous people</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       
 
@@ -42,9 +42,6 @@ export default function Home() {
 
           </div>
           <header className="header">
-            <div className="header__logo-box">
-              <img className="header__logo" src="img/logo-white.png" alt="logo"/>
-            </div>
 
             <div className="header__text-box">
               <h1 className="heading-primary">                                                    
@@ -68,13 +65,13 @@ export default function Home() {
 
               <div className="u-center-text u-margin-bottom-big">
                 <h2 className="heading-secondary">
-                  Exciting tours htmlFor adventurous people
+                  Exciting tours For adventurous people
                 </h2>
               </div>
 
-              <div className="row">
+              <div className="about__container">
 
-                <div className="col-1-of-2">
+                <div className="about__container--left">
                   <h3 className="heading-tertiary u-margin-bottom-small">You are going to fall in love with nature</h3>
                   <p className="paragraph">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit tempore aliquid architecto, eveniet, reiciendis, itaque officia soluta excepturi non illum similique esse omnis vero ut aut laboriosam quisquam! A, eaque!</p>
                   <h3 className="heading-tertiary u-margin-bottom-small">Live adventures like you never have before</h3>
@@ -82,7 +79,7 @@ export default function Home() {
                   <a href="#" className="btn-text">Learn More &rarr;</a>
                 </div>
 
-                <div className="col-1-of-2">
+                <div className="about__container--right">
                   <div className="composition">
                     <img src="img/nat-1-large.jpg" alt="Photo 1" className="composition__photo composition__photo--p1"/>
                     <img src="img/nat-2-large.jpg" alt="Photo 2" className="composition__photo composition__photo--p2"/>
@@ -97,8 +94,13 @@ export default function Home() {
         
             <section className="section-feature">
 
-              <div className="row row-skew">
-                <div className="col-1-of-4">
+              <div className="u-center-text u-margin-bottom-big">
+                <h2 className="heading-secondary feature__heading">
+                  Features that you won't be able to ignore
+                </h2>
+              </div>
+              <div className="row-skew feature__container">
+                <div className="feature">
                   <div className="feature-box">
                     <i className="feature-box__icon icon-basic-world"></i>
                     <h3 className="heading-tertiary u-margin-bottom-small">Explore the world</h3>
@@ -106,7 +108,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="col-1-of-4">
+                <div className="feature">
                   <div className="feature-box">
                     <i className="feature-box__icon icon-basic-compass"></i>
                     <h3 className="heading-tertiary u-margin-bottom-small">Meet Nature</h3>
@@ -114,7 +116,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="col-1-of-4">
+                <div className="feature">
                   <div className="feature-box">
                     <i className="feature-box__icon icon-basic-map"></i>
                     <h3 className="heading-tertiary u-margin-bottom-small">Find you way</h3>
@@ -122,7 +124,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="col-1-of-4">
+                <div className="feature">
                   <div className="feature-box">
                     <i className="feature-box__icon icon-basic-heart"></i>
                     <h3 className="heading-tertiary u-margin-bottom-small">live a healthier life</h3>
@@ -144,9 +146,9 @@ export default function Home() {
                 </h2>
               </div>
 
-              <div className="row">
+              <div className="tours">
 
-                <div className="col-1-of-3">
+                <div className="tour">
                   <div className="card">
                     <div className="card__side card__side--front">
                       <div className="card__pictures card__pictures--1">
@@ -179,7 +181,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="col-1-of-3">
+                <div className="tour">
                   <div className="card">
                     <div className="card__side card__side--front">
                       <div className="card__pictures card__pictures--2">
@@ -212,7 +214,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="col-1-of-3">
+                <div className="tour">
                   <div className="card">
                     <div className="card__side card__side--front">
                       <div className="card__pictures card__pictures--3">
@@ -269,7 +271,7 @@ export default function Home() {
                 <h2 className="heading-secondary">we make people genuinely happy</h2>
               </div>
             
-              <div className="row">
+              <div className="story__container">
                 <div className="story">
                   <figure className="story__shape">
                     <img src="../img/nat-8.jpg" alt="Image of the story person" className="story__img"/>
@@ -294,7 +296,7 @@ export default function Home() {
                 
               </div>
 
-              <div className="row">
+              <div className="story__container">
                 <div className="story">
                   <figure className="story__shape">
                     <img src="../img/nat-9.jpg" alt="Image of the story person" className="story__img"/>
@@ -323,7 +325,7 @@ export default function Home() {
 
             <section className="section-book">
 
-              <div className="row">
+              <div className="booking__container">
 
                 <div className="book">
 
@@ -344,14 +346,17 @@ export default function Home() {
                         <label htmlFor="email" className="form__label">Email address</label>
                       </div>
 
-                      <div className="form__group">
-                        <div className="form__radio-group">
-                          <input type="radio" className="form__radio-input" id="small" name="radio"/>
-                          <label htmlFor="small" className="form__radio-label"><span className="form__radio-button"></span>Small tour group</label>
-                        </div>
-                        <div className="form__radio-group">
-                          <input type="radio" className="form__radio-input" id="large" name="radio"/>
-                          <label htmlFor="large" className="form__radio-label"><span className="form__radio-button"></span> Large tour group</label>
+                      <div className="radio__container">
+
+                        <div className="form__group">
+                          <div className="form__radio-group">
+                            <input type="radio" className="form__radio-input" id="small" name="radio"/>
+                            <label htmlFor="small" className="form__radio-label"><span className="form__radio-button"></span>Small tour group</label>
+                          </div>
+                          <div className="form__radio-group">
+                            <input type="radio" className="form__radio-input" id="large" name="radio"/>
+                            <label htmlFor="large" className="form__radio-label"><span className="form__radio-button"></span> Large tour group</label>
+                          </div>
                         </div>
                       </div>
 

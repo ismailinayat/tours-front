@@ -1,3 +1,27 @@
+.about__container {
+  display: flex;
+  flex-wrap: wrap;
+
+
+  &--left {
+    width: 50%;
+
+    @include respond(tab-port) {
+      padding: 2rem;
+      width: 100%;
+    }
+  }
+
+  &--right {
+    width: 50%;
+
+    @include respond(tab-port) {
+      padding: 2rem;
+      width: 100%;
+    }
+  }
+}
+
 .composition {
   position: relative;
 
@@ -10,17 +34,40 @@
     transition: all .2s;
     outline-offset: 2rem;
 
+    @include respond(tab-port) {
+      width: 100%;
+      position: relative;
+
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
     &--p1 {
       left: 0;
       top: -2rem;
+
+      @include respond(tab-port) {
+        left: 0;
+        top: 0;
+      }
     }
     &--p2 {
       right: 0;
       top: 2rem;
+      @include respond(tab-port) {
+        left: 0;
+        top: 0;
+      }
     }
     &--p3 {
       left: 10rem;
       top: 10rem;
+
+      @include respond(tab-port) {
+        left: 0;
+        top: 0;
+      }
     }
 
     &:hover {

@@ -79,11 +79,24 @@
     position: relative;
     height: 38vw;
     background-image: linear-gradient(
-        to right,
-        #55c57a,
-        #28b485
-    );
+      to right, 
+      rgba($color-primary-light, 0.8),        /*Now in normal css rgba takes only the rgba colors and not the hexadecimals. This only works with sass*/
+      rgba($color-primary-dark, 0.8));
 
+    .header__background-image {
+
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
   }
   
 
@@ -249,14 +262,21 @@
     bottom: 0;
     width: 100%;
   }
-  /*
+  
+  .marker__button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+  }
   .marker {
-    background-image: url('../img/pin.png');
+    //background-image: url('../img/pin.png');
     background-size: cover;
+    background-color: transparent;
+    color: transparent;
     width: 32px;
     height: 40px;
     cursor: pointer;
-  }*/
+  }
   
   .mapboxgl-popup {
     max-width: 25rem;
@@ -538,3 +558,7 @@
     border-radius: 5px;
   }
   
+
+  .btn--buy {
+    cursor: pointer;
+  }

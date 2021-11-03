@@ -4,7 +4,9 @@
   position: relative;
   height: 51rem;                                       // When we set the position property of all the child eleemnts to absolute, then just like the 'floats', the parent element loses its height.
                                                        // There is no fix so what we have to do is to give the same 'height' to the parent element as we have in child elements.
-
+  @include respond(tab-land) {
+    height: auto;
+  }
   &__side {
     height: 51rem;
     transition: all 0.8s ease;
@@ -17,6 +19,10 @@
     overflow: hidden;
     box-shadow: 0 2rem 3.5rem rgba($color-black, 0.15);
 
+    @include respond(tab-land) {
+      position: relative;
+    }
+
     &--front {
       background-color: $color-white;
       
@@ -25,6 +31,11 @@
     &--back {
       
       transform: rotateY(180deg);
+
+      @include respond(tab-land) {
+        transform: none;
+        //height: ;
+      }
 
       &-1 {
         background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
@@ -42,6 +53,10 @@
 
   &:hover &__side--front {                               // This means that when we hover over the 'card' element then apply the following rules on 'card__side--front' element.
     transform: rotateY(-180deg);
+
+    @include respond(tab-land) {
+      transform: none;
+    }
   }
 
   &:hover &__side--back {                                // This means that when we hover over the 'card' element then apply the following rules on 'card__side--back' element.
@@ -56,6 +71,10 @@
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
+
+    @include respond(tab-port) {
+      background-position: bottom;
+    }
     
     &--1 {
       background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../img/nat-5.jpg);

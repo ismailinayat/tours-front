@@ -10,9 +10,10 @@
   background-size: cover;                                  
   background-position: top;                                
 
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);      
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%); 
 
-  position: relative;                                      
+  position: relative;
+  padding: 2rem;
 
   &__logo-box {
     position: absolute;                                      

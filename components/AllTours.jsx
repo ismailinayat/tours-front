@@ -1,9 +1,10 @@
 import React from 'react'
 import axios from 'axios';
 import {useQuery} from 'react-query';
+import Link from 'next/link';
 
 const fetchTours = async () => {
-  const {data} = await axios.get('https://tours-explorer.herokuapp.com/api/v1/tours', {withCredentials: true});
+  const {data} = await axios.get('http://localhost:8000/api/v1/tours', {withCredentials: true});
   console.log(data)
   return data.data.data;
 }
@@ -91,7 +92,9 @@ function AllTours() {
                       <span className="cardt__footer-value">{tour.ratingsAverage}</span>
                       <span className="cardt__footer-text">{`rating (${tour.ratingsQuantity})`}</span>
                     </p>
-                    <a href="#" className="btn btn--green btn--small">Details</a>
+                    <Link href={`tours/${tour._id}`}>
+                    <a className="btn btn--green btn--small">Details</a>
+                    </Link>
                   </div>
                 </div>
                   )
