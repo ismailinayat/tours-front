@@ -62,7 +62,7 @@ function tour({tour}) {
     }
 
     const {longitude, latitude, zoom} = new WebMercatorViewport({width: 600, height: 600})
-    .fitBounds([[data.locations[1].coordinates[0], data.locations[1].coordinates[1]], [data.locations[0].coordinates[0], data.locations[0].coordinates[1]]], {
+    .fitBounds([[data.locations[1] ? data.locations[1].coordinates[0]: data.locations[0].coordinates[0], data.locations[1] ? data.locations[1].coordinates[1]: data.locations[0].coordinates[1]], [data.locations[0].coordinates[0], data.locations[0].coordinates[1]]], {
       padding: 20,
       offset: [0, -100]
     });
