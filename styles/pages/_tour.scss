@@ -62,6 +62,10 @@
     text-align: center;
     width: 70%;
     margin: 0 auto;
+
+    @include respond(tab-land) {
+      width: 100%;
+    }
   }
   
   .heading-tertirary {
@@ -77,7 +81,7 @@
 
   .section-header {
     position: relative;
-    height: 38vw;
+    height: 70vh;
     background-image: linear-gradient(
       to right, 
       rgba($color-primary-light, 0.8),        /*Now in normal css rgba takes only the rgba colors and not the hexadecimals. This only works with sass*/
@@ -109,6 +113,11 @@
     top: 35%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    text-align: center;
+
+    @include respond(tab-port) {
+      top: 45%;
+    }
   }
   .heading-box__group {
     color: #f7f7f7;
@@ -122,6 +131,10 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+
+    @include respond(tab-land) {
+      flex-direction: column;
+    }
   }
   .heading-box__detail {
     font-size: 1.5rem;
@@ -134,6 +147,12 @@
     -ms-flex-align: center;
     align-items: center;
     text-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+    @include respond(tab-land) {
+      &:not(:last-child) {
+        margin-bottom: 3rem;
+      }
+    }
+
   }
   .heading-box__detail svg {
     margin-right: 0.8rem;
@@ -155,6 +174,10 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
   }
   .section-description > * {
     padding: 10vw 8vw;
@@ -183,6 +206,26 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+
+
+    .overview-box-inner {
+      
+
+      width: 100%;
+      height: 100%;
+      @include respond(tab-port) {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      @include respond(phone) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
   }
   .overview-box__group:not(:last-child) {
     margin-bottom: 7rem;
@@ -231,6 +274,11 @@
     margin: 10rem auto;
     position: relative;
     z-index: 1000;
+
+    @include respond(tab-land) {
+      flex-direction: column;
+      gap: 5rem;
+    }
   }
   
   .picture-box__img {
@@ -461,14 +509,18 @@
     z-index: 8;
   }
   .cta__content {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-template-columns: 1fr auto;
-    grid-gap: 0.7rem;
-    grid-auto-flow: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+
+    @include respond(tab-port) {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    &--text {
+      margin-bottom: 3rem;
+    }
   }
   .cta__text {
     font-size: 1.9rem;

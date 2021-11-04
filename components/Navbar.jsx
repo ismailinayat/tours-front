@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import {UserContext} from './../context/UserContext';
 
+import MobileNav from './MobileNav';
+
 function Navbar() {
 
     const {user, setUser} = useContext(UserContext);
@@ -36,21 +38,7 @@ function Navbar() {
     return (
         <div>
             <header className="header-t">
-              {router.pathname === '/tours' && (<nav className="nav nav--tours">
-                <a href="#" className="nav__el">All tours</a>
-                <form className="nav__search">
-                  <button className="nav__search-btn">
-                    <svg>
-                      <use href="img/icons.svg#icon-search"></use>
-                    </svg>
-                  </button>
-                  <input
-                    type="text"
-                    placeholder="Search tours"
-                    className="nav__search-input"
-                  />
-                </form>
-              </nav>)}
+
               
 
               <Link href="/">
@@ -66,12 +54,12 @@ function Navbar() {
                 {
                     user?.name ?
                     <>
-                    <a href="#" className="nav__el">My bookings</a>
-                    <a href="#" className="nav__el">
-                      <Image src="/img/default.jpg" width={35} height={35} alt="User photo" className="nav__user-img" />
-                      <span>{user.name}</span>
-                    </a>
-                    <a href="#" className="nav__el" onClick={handleLogout}>Logout</a>
+                      <a href="#" className="nav__el">
+                        <Image src="/img/default.jpg" width={50} height={50} alt="User photo" className="nav__user-img" />
+                        <span>{user.name}</span>
+                      </a>
+                      <a href="#" className="nav__el" >My Bookings</a>
+                      <a href="#" className="nav__el" onClick={handleLogout}>Logout</a>
                     </>
                   :
                     <>
@@ -86,9 +74,12 @@ function Navbar() {
                     </Link>
                     </>
                 }
+
+                
                 
 
               </nav>
+              <MobileNav></MobileNav>
             </header>
         </div>
     )

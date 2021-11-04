@@ -106,80 +106,84 @@ function tour({tour}) {
                     <img src={`../../img/${data.imageCover}`} alt="" />
                 </div>
                 <div className="heading-box">
-                <h1 className="heading-primaryt">
-                    <span>{data.name}</span> <br />
-                    
+
+                    <h1 className="heading-primaryt">
+                        <span>{data.name}</span> <br />      
                     </h1>
+                    
                     <div className="heading-box__group">
-                    <div className="heading-box__detail">
-                        <svg className="heading-box__icon">
-                        <use href="../../img/icons.svg#icon-clock"></use>
-                        </svg>
-                        <span className="heading-box__text">{`${data.duration} days`}</span>
-                    </div>
-                    <div className="heading-box__detail">
-                        <svg className="heading-box__icon">
-                        <use href="../img/icons.svg#icon-map-pin"></use>
-                        </svg>
-                        <span className="heading-box__text">{data.startLocation.address}</span>
-                    </div>
+                        <div className="heading-box__detail">
+                            <svg className="heading-box__icon">
+                            <use href="../../img/icons.svg#icon-clock"></use>
+                            </svg>
+                            <span className="heading-box__text">{`${data.duration} days`}</span>
+                        </div>
+
+                        <div className="heading-box__detail">
+                            <svg className="heading-box__icon">
+                            <use href="../img/icons.svg#icon-map-pin"></use>
+                            </svg>
+                            <span className="heading-box__text">{data.startLocation.address}</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
         <section className="section-description">
+
+    
         <div className="overview-box">
-            <div>
-            <div className="overview-box__group">
-                <h2 className="heading-secondary ma-bt-lg">Quick facts</h2>
-                <div className="overview-box__detail">
-                <svg className="overview-box__icon">
-                    <use href="../img/icons.svg#icon-calendar"></use>
-                </svg>
-                <span className="overview-box__label">Next date</span>
-                <span className="overview-box__text">{`${month}, ${new Date(data.startDates[0]).getFullYear()}`}</span>
+            <div className="overview-box-inner">
+                <div className="overview-box__group">
+                    <h2 className="heading-secondary ma-bt-lg">Quick facts</h2>
+                    <div className="overview-box__detail">
+                    <svg className="overview-box__icon">
+                        <use href="../img/icons.svg#icon-calendar"></use>
+                    </svg>
+                    <span className="overview-box__label">Next date</span>
+                    <span className="overview-box__text">{`${month}, ${new Date(data.startDates[0]).getFullYear()}`}</span>
+                    </div>
+                    <div className="overview-box__detail">
+                    <svg className="overview-box__icon">
+                        <use href="../img/icons.svg#icon-trending-up"></use>
+                    </svg>
+                    <span className="overview-box__label">Difficulty</span>
+                    <span className="overview-box__text">{data.difficulty}</span>
+                    </div>
+                    <div className="overview-box__detail">
+                    <svg className="overview-box__icon">
+                        <use href="../img/icons.svg#icon-user"></use>
+                    </svg>
+                    <span className="overview-box__label">Participants</span>
+                    <span className="overview-box__text">{`${data.maxGroupSize} People`}</span>
+                    </div>
+                    <div className="overview-box__detail">
+                    <svg className="overview-box__icon">
+                        <use href="../img/icons.svg#icon-star"></use>
+                    </svg>
+                    <span className="overview-box__label">Rating</span>
+                    <span className="overview-box__text">{`${data.ratingsAverage} / 5`}</span>
+                    </div>
                 </div>
-                <div className="overview-box__detail">
-                <svg className="overview-box__icon">
-                    <use href="../img/icons.svg#icon-trending-up"></use>
-                </svg>
-                <span className="overview-box__label">Difficulty</span>
-                <span className="overview-box__text">{data.difficulty}</span>
-                </div>
-                <div className="overview-box__detail">
-                <svg className="overview-box__icon">
-                    <use href="../img/icons.svg#icon-user"></use>
-                </svg>
-                <span className="overview-box__label">Participants</span>
-                <span className="overview-box__text">{`${data.maxGroupSize} People`}</span>
-                </div>
-                <div className="overview-box__detail">
-                <svg className="overview-box__icon">
-                    <use href="../img/icons.svg#icon-star"></use>
-                </svg>
-                <span className="overview-box__label">Rating</span>
-                <span className="overview-box__text">{`${data.ratingsAverage} / 5`}</span>
-                </div>
-            </div>
 
-            <div className="overview-box__group">
-                <h2 className="heading-secondary ma-bt-lg">Your tour guides</h2>
-            {data.guides.map(guide => (
+                <div className="overview-box__group">
+                    <h2 className="heading-secondary ma-bt-lg">Your tour guides</h2>
+                {data.guides.map(guide => (
 
-                <div className="overview-box__detail" key={guide._id}>
-                    <img
-                        src={`../img/users/${guide.photo}`}
-                        alt={guide.role}
-                        className="overview-box__img"
-                    />
-                    <span className="overview-box__label">{guide.role}</span>
-                    <span className="overview-box__text">{guide.name}</span>
+                    <div className="overview-box__detail" key={guide._id}>
+                        <img
+                            src={`../img/users/${guide.photo}`}
+                            alt={guide.role}
+                            className="overview-box__img"
+                        />
+                        <span className="overview-box__label">{guide.role}</span>
+                        <span className="overview-box__text">{guide.name}</span>
+                    </div>
+                ))}
+
+
+                    
                 </div>
-            ))}
-
-
-                
-            </div>
             </div>
         </div>
 
@@ -223,7 +227,7 @@ function tour({tour}) {
                 {...viewPort} 
                 mapboxApiAccessToken='pk.eyJ1IjoiaXNtYWlsaW5heWF0IiwiYSI6ImNrMzk0OTlsdzBmMm0zZW92YXV5aXpoOG4ifQ.Xn1DGhnwcZQ8IXD4_Irubw'
                 onViewportChange={viewport => setViewPort(viewport)}
-                mapStyle="mapbox://styles/ismailinayat/ckvgs5yj8hmgc14o88v7w5u66"
+                mapStyle="mapbox://styles/ismailinayat/ckvjrgado9jty15o8mbybz9o7"
             >
                 {
                     data.locations.map(loc => (
@@ -286,16 +290,20 @@ function tour({tour}) {
         <section className="section-cta">
         <div className="cta">
             <div className="cta__img cta__img--logo">
-            <img src="../img/logo-white.png" alt="Natours logo" className="" />
+                <img src="../img/logo-white.png" alt="Natours logo" className="" />
             </div>
+
             <img src="../img/tour-5-2.jpg" alt="" className="cta__img cta__img--1" />
             <img src="../img/tour-5-1.jpg" alt="" className="cta__img cta__img--2" />
 
             <div className="cta__content">
-            <h2 className="heading-secondary">What are you waiting for?</h2>
-            <p className="cta__text">
-                {`${data.duration} days. 1 adventure. Infinite memories. Make it yours today!`}
-            </p>
+                <div className="cta__content--text">
+
+                    <h2 className="heading-secondary">What are you waiting for?</h2>
+                    <p className="cta__text">
+                        {`${data.duration} days. 1 adventure. Infinite memories. Make it yours today!`}
+                    </p>
+                </div>
             <button className="btn btn--green span-all-rows btn--buy">Book tour now!</button>
             </div>
         </div>
