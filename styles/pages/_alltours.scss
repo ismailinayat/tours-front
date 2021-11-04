@@ -133,10 +133,14 @@ body {
 }
 
 
-
-.header-t {
+.header__container {
   background-color: #444;
   padding: 0 5rem;
+}
+.header-t {
+  background-color: #444;
+  max-width: $grid-width;
+  margin: 0 auto;
   height: 8rem;
   position: relative;
   z-index: 100;

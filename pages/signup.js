@@ -1,25 +1,49 @@
 import useInputState from '../hooks/useInputState.js';
 import { toast, ToastContainer } from 'react-toastify';
 import axios from 'axios';
-import {useRouter} from 'next/router';
-import React from 'react'
+import {useContext, useEffect} from 'react';
 
+import { UserContext } from '../context/UserContext.js';
 
 
 
 function SignUp() {
 
 
+    const {user, setUser} = useContext(UserContext);
     const [email, updateEmail] = useInputState('');
     const [name, updateName] = useInputState('');
     const [password, updatePassword] = useInputState('');
     const [passwordConfirm, updatePasswordConfirm] = useInputState('');
 
+    useEffect(() => {
+        if(!localStorage.getItem("user")) {
+          localStorage.setItem("user", "{}")
+        }
+  
+        if (JSON.parse(localStorage.getItem("user")).name) {
+          return window.location.replace("/")
+        }
+  
+  
+        localStorage.setItem("user", JSON.stringify(user));
+        //window.location.replace("http://localhost:3000")
+          
+  
+      }, [user])
+
+      
 const signup = async (e) => {
     try {
         const res = await axios.post('http://localhost:8000/api/v1/users/signup/', 
-        {name: e.target.name.value, email: e.target.email.value, password: e.target.password.value, passwordConfirm: e.target.passwordConfirm.value})
-        //window.location.replace("http://localhost:8000");
+                        {name: e.target.name.value, 
+                         email: e.target.email.value, 
+                         password: e.target.password.value, 
+                         passwordConfirm: e.target.passwordConfirm.value},
+                         {withCredentials: true})
+
+        setUser(res.data.data.user)
+        window.location.replace("http://localhost:3000");
 
 
         console.log(res.data.data)

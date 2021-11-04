@@ -235,7 +235,9 @@ export default function Home() {
               </div>
 
               <div className="u-center-text u-margin-top-huge">
+              <Link href='/tours'>
                 <a href="#" className="btn btn--green">Discover all tours</a>
+              </Link>
               </div>
 
             </section>

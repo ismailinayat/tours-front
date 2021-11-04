@@ -37,6 +37,8 @@ function Navbar() {
     //console.log(user);
     return (
         <div>
+            <div className="header__container">
+
             <header className="header-t">
 
               
@@ -81,6 +83,7 @@ function Navbar() {
               </nav>
               <MobileNav></MobileNav>
             </header>
+            </div>
         </div>
     )
 }
