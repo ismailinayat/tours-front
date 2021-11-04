@@ -4,7 +4,7 @@ import ReactMapGL, {Marker, WebMercatorViewport, FlyToInterpolator} from 'react-
 import axios from 'axios';
 
 const fetchTours = async (id) => {
-    const {data} = await axios.get('http://localhost:8000/api/v1/tours/', {withCredentials: true});
+    const {data} = await axios.get('https://tours-explorer.herokuapp.com/api/v1/tours/', {withCredentials: true});
     return data.data.data;
 }
 
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
     // params contains the post `id`.
     // If the route is like /posts/1, then params.id is 1
-    const res = await fetch(`http://localhost:8000/api/v1/tours/${params.id}`)
+    const res = await fetch(`https://tours-explorer.herokuapp.com/api/v1/tours/${params.id}`)
     const tour = await res.json()
   
     // Pass post data to the page via props

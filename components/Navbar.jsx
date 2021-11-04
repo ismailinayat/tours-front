@@ -19,7 +19,7 @@ function Navbar() {
 
     const logout = async () => {
       try {
-        const res = await axios.get('http://localhost:8000/api/v1/users/logout/', 
+        const res = await axios.get('https://tours-explorer.herokuapp.com/api/v1/users/logout/', 
         {withCredentials: true}
         )
         //window.location.replace("http://localhost:3000");

@@ -35,7 +35,7 @@ function SignUp() {
       
 const signup = async (e) => {
     try {
-        const res = await axios.post('http://localhost:8000/api/v1/users/signup/', 
+        const res = await axios.post('https://tours-explorer.herokuapp.com/api/v1/users/signup/', 
                         {name: e.target.name.value, 
                          email: e.target.email.value, 
                          password: e.target.password.value, 
@@ -43,7 +43,7 @@ const signup = async (e) => {
                          {withCredentials: true})
 
         setUser(res.data.data.user)
-        window.location.replace("http://localhost:3000");
+        window.location.replace("/");
 
 
         console.log(res.data.data)
