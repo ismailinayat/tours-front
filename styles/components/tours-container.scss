@@ -20,6 +20,11 @@
             width: 100%;
             padding: 0 10rem;
         }
+
+        @include respond(phone) {
+            width: 100%;
+            padding: 0 2rem;
+        }
         
     }
 }

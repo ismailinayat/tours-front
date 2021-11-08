@@ -32,7 +32,7 @@ export default function Home() {
               <h1 className="heading-primary">                                                    
 
                 <span className="heading-primary--main">outdoors</span>
-                <span className="heading-primary--sub">is where life happens</span>
+                <span className="heading-primary--sub1">is where life happens</span>
 
               </h1>
               <Link href='/tours'>

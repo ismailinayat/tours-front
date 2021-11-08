@@ -54,6 +54,13 @@
     cursor: pointer;
     text-align: center;
 
+    @include respond(phone) {
+      height: 5rem;
+      width: 5rem;
+      right: 1rem;
+      top: 1.5rem;
+    }
+
     &:hover .navigation__icon{
       &::before {transform: translateY(-0.2rem)};
       &::after {transform: translateY(0.2rem)};
@@ -69,7 +76,11 @@
     position: relative;    //for positioning of ::before and ::after pseudo-classes
     top: 3rem;
     
-
+    @include respond(phone) {
+      height: 2px;
+      width: 2.5rem;
+      top: 2.5rem;
+    }
 
 
     &::before,
@@ -82,6 +93,10 @@
       position: absolute;
       left: 0;
       transition: all 0.2s;
+      @include respond(phone) {
+        height: 2px;
+        width: 2.5rem;
+      }
     }
 
     &::before {top: -0.8rem};
@@ -103,7 +118,11 @@
     z-index: 100;
     transition: all 0.3s;
 
-    
+    @include respond(phone) {
+      height: 4rem;
+      width: 4rem;
+      right: 1.5rem;
+    }
   }
 
   &__nav {
@@ -129,6 +148,10 @@
     list-style: none;
     margin: 1.5rem;
     display: block;
+
+    @include respond (phone) {
+      margin: 1.5rem 0rem;
+    }
   }
 
   &__link {
@@ -145,6 +168,10 @@
 
       background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
       background-size: 220%;
+
+      @include respond(phone) {
+        font-size: 2rem;
+      }
 
       span {
         margin-right: 1.5rem;
