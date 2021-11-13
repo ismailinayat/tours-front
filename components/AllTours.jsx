@@ -21,9 +21,9 @@ export async function getStaticProps() {
   }
 }
 
-function AllTours() {
+function AllTours({tours}) {
 
-  let {data, error, isLoading, isError} = useQuery('allTours', fetchTours);
+  let {data, error, isLoading, isError} = useQuery('allTours', fetchTours, {initialData: tours});
   console.log(data)
   console.log(error)
   console.log(isLoading)
